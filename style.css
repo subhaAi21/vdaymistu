@@ -1,0 +1,614 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at top, #ff758c, #ff7eb3);
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* 🌹 Rose Petals */
+.petal {
+  position: absolute;
+  top: -10%;
+  font-size: 20px;
+  animation: fall linear infinite;
+  opacity: 0.9;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* 💕 Floating Hearts */
+.heart {
+  position: absolute;
+  font-size: 18px;
+  animation: floatUp linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes floatUp {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); opacity: 0; }
+}
+
+/* 🎉 Confetti */
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  animation: confettiFall 2s linear forwards;
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.container {
+  background: linear-gradient(
+  rgba(0,0,0,0.35),
+  rgba(0,0,0,0.6)
+);
+backdrop-filter: blur(4px);
+
+  /*backdrop-filter: blur(12px);*/
+  border-radius: 25px;
+  padding: 25px;
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  z-index: 10;
+}
+
+/* (keep rest of your CSS exactly the same) */
+/* 🖼️ Cinematic Photo Background */
+.photo {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-top: 20px;
+  display: none;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ✨ Button styling upgrade */
+button {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(255,255,255,0.4);
+}
+
+#yes {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 15px rgba(0,255,200,0.6); }
+  50% { box-shadow: 0 0 30px rgba(0,255,200,1); }
+  100% { box-shadow: 0 0 15px rgba(0,255,200,0.6); }
+}
+/* 💖 Cute Button Base */
+button {
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.4px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* YES button */
+#yes {
+  background: linear-gradient(45deg, #00e676, #1de9b6);
+  color: #000;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 15px rgba(0,255,200,0.6); }
+  50% { box-shadow: 0 0 30px rgba(0,255,200,1); }
+  100% { box-shadow: 0 0 15px rgba(0,255,200,0.6); }
+}
+
+/* Runaway buttons */
+
+
+
+
+#no {
+  background: linear-gradient(45deg, #ff1744, #ff6f91);
+  color: white;
+  left: 10%;
+}
+
+#maybe {
+  background: linear-gradient(45deg, #ffd600, #fff176);
+  color: #000;
+  right: 10%;
+}
+
+/* Hover cute effect */
+button:hover {
+  transform: scale(1.1);
+}
+
+/* 💌 Card expansion after YES */
+.container.expand {
+  width: 95%;
+  max-width: 520px;
+  transition: all 0.8s ease;
+  padding: 30px;
+}
+
+/* 🖼️ Image becomes background */
+.container.bg-photo {
+  background-image: url("HER_PHOTO.jpeg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.container.bg-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  border-radius: 25px;
+  z-index: 0;
+}
+
+.container > * {
+  position: relative;
+  z-index: 2;
+}
+/* 🃏 Card layout */
+.card {
+  width: 100%;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Make first card wider */
+.card-main {
+  padding: 25px;
+}
+
+/* Container wider */
+.container {
+  max-width: 520px;
+}
+
+/* 💖 Cute buttons */
+button {
+  padding: 16px 34px;
+  border-radius: 999px;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform 0.6s ease-out, box-shadow 0.4s ease;
+}
+
+/* YES */
+#yes {
+  background: linear-gradient(45deg, #00e676, #1de9b6);
+  color: #000;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 15px rgba(0,255,200,0.6); }
+  50% { box-shadow: 0 0 30px rgba(0,255,200,1); }
+  100% { box-shadow: 0 0 15px rgba(0,255,200,0.6); }
+}
+
+/* Runaway buttons */
+
+
+/* NO */
+#no {
+  left: 15%;
+  background: linear-gradient(45deg, #ff1744, #ff6f91);
+  color: white;
+}
+
+/* MAYBE */
+#maybe {
+  right: 15%;
+  background: linear-gradient(45deg, #ffd600, #fff176);
+  color: #000;
+}
+/* 🎥 Cinematic fade-in */
+.container {
+  animation: cardFade 1.6s ease forwards;
+}
+
+@keyframes cardFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 🌙 Subtle background zoom */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, #ff758c, #ff7eb3);
+  animation: bgZoom 18s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes bgZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.08); }
+}
+
+/* 😏 Teasing text */
+#tease {
+  position: fixed;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 60;
+  text-shadow: 0 0 12px rgba(255,255,255,0.7);
+}
+/* 🌸 Floating cute symbols */
+/* 🌸 Floating cute symbols (bigger & smoother) */
+.floating {
+  position: fixed;
+  font-size: 28px;          /* BIGGER */
+  pointer-events: none;
+  animation: floatCute linear infinite;
+  opacity: 0.9;
+  z-index: 1;
+  filter: drop-shadow(0 0 10px rgba(255,180,200,0.8));
+}
+
+
+@keyframes floatCute {
+  from {
+    transform: translateY(100vh) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  20% { opacity: 0.8; }
+  to {
+    transform: translateY(-10vh) translateX(40px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+/* 💌 Make letter wider */
+.letter {
+  margin-top: auto;       /* pushes to bottom */
+  background: rgba(0,0,0,0.35);
+  padding: 18px 20px;
+  border-radius: 20px;
+  max-width: 100%;
+  z-index: 3;
+}
+
+
+.letter p {
+  font-size: 1rem;
+}
+
+/* 🖼️ Slightly transparent background image */
+.container.bg-photo::before {
+  background: rgba(0,0,0,0.45); /* more readable */
+}
+/* 😈 Tiny tease shake */
+.runaway.shake {
+  animation: teaseShake 0.25s ease-in-out;
+}
+
+@keyframes teaseShake {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-4px); }
+  50%  { transform: translateX(4px); }
+  75%  { transform: translateX(-3px); }
+  100% { transform: translateX(0); }
+}
+/* ✨ Final romantic glow */
+.container.final-glow {
+  box-shadow:
+    0 0 25px rgba(255, 200, 220, 0.6),
+    0 0 50px rgba(255, 120, 180, 0.6),
+    0 0 90px rgba(255, 80, 150, 0.7);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow:
+      0 0 25px rgba(255, 200, 220, 0.5),
+      0 0 50px rgba(255, 120, 180, 0.6);
+  }
+  50% {
+    box-shadow:
+      0 0 40px rgba(255, 200, 230, 0.9),
+      0 0 80px rgba(255, 120, 200, 0.9);
+  }
+  100% {
+    box-shadow:
+      0 0 25px rgba(255, 200, 220, 0.5),
+      0 0 50px rgba(255, 120, 180, 0.6);
+  }
+}
+/* 🧱 Bigger first card */
+.big-card {
+  padding: 40px 25px 50px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Button group inside card */
+.choice-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+  position: relative;
+}
+
+/* Keep runaway buttons inside card visually */
+.choice-buttons .runaway {
+  position: relative;
+}
+
+/* Initial positions */
+#no {
+  left: 0;
+}
+
+#maybe {
+  right: 0;
+}
+/* 🃏 Cards */
+.card {
+  width: 100%;
+  border-radius: 25px;
+  text-align: center;
+}
+
+/* First card */
+#card1 {
+  padding: 40px 25px 50px;
+}
+
+/* Second card hidden initially */
+#card2 {
+  display: none;
+  padding: 40px 25px;
+}
+
+/* Background image for card 2 */
+#card2.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dark overlay for readability */
+#card2.active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.6)
+  );
+  border-radius: 28px;
+  z-index: 1;
+}
+
+
+
+/* Text above sparkles */
+#card2 .yes-text {
+  margin-top: 10px;
+}
+
+/* Letter ALWAYS at bottom */
+#card2 .letter {
+  margin-top: auto;          /* THIS is the key */
+  margin-bottom: 10px;
+  background: rgba(0,0,0,0.4);
+  padding: 20px 22px;
+  border-radius: 20px;
+}
+
+/* Buttons inside card */
+.choice-buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* Default state: inside card */
+.choice-buttons .runaway {
+  position: relative;
+}
+
+/* Escape state */
+.runaway.escape {
+  position: fixed;
+  z-index: 50;
+  transition: transform 1s ease-in-out;
+}
+/* 🎬 Fade transition for cards */
+.card {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.card.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+.card.fade-in {
+  opacity: 1;
+  transform: scale(1);
+}
+/* 💖 She said YES text */
+.yes-text {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 10px;
+  opacity: 0;
+  text-shadow: 0 0 15px rgba(255,255,255,0.9);
+  z-index: 3;
+}
+
+
+/* Animate when active */
+.yes-text.show {
+  animation: yesReveal 1.2s ease forwards;
+}
+
+@keyframes yesReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+/* ✨ Sparkle burst */
+/* ✨ Sparkle container (BEHIND TEXT) */
+.sparkles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;   /* between overlay and text */
+}
+
+
+
+.sparkle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0;
+  animation: sparklePop 1.4s ease forwards;
+  box-shadow: 0 0 10px rgba(255,255,255,0.9);
+}
+
+@keyframes sparklePop {
+  0% {
+    transform: scale(0) translate(0, 0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translate(var(--x), var(--y));
+    opacity: 0;
+  }
+}
+/* 🎥 Cinematic zoom for card 2 */
+/* 💌 Second card bigger & cinematic */
+#card2.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 620px;
+  aspect-ratio: 3 / 4.5;   /* portrait look */
+
+  padding: 40px 30px;
+  margin: 0 auto;
+
+  background-image: url("HER_PHOTO.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 28px;
+  position: relative;
+  color: white;
+}
+
+
+@keyframes cinematicZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}
+
+.yes-text.show {
+  animation: yesReveal 1.2s ease forwards, textGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 0 0 15px rgba(255,255,255,0.7);
+  }
+  to {
+    text-shadow: 0 0 30px rgba(255,200,230,1);
+  }
+}
+
+#card2.active {
+  animation: cinematicZoom 12s ease forwards;
+}
+
